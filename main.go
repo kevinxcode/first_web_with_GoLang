@@ -11,6 +11,10 @@ func Home(w http.ResponseWriter, r *http.Request) {
 	fmt.Fprint(w, "this is the home page")
 }
 
+func Profile(w http.ResponseWriter, r *http.Request) {
+	fmt.Fprint(w, "this is the Profile page")
+}
+
 // about is the about page handler
 func About(w http.ResponseWriter, r *http.Request) {
 	sum := AddValues(2, 2)
@@ -26,6 +30,7 @@ func AddValues(x, y int) int {
 func main() {
 	http.HandleFunc("/", Home)
 	http.HandleFunc("/about", About)
+	http.HandleFunc("/profile", Profile)
 
 	fmt.Println(fmt.Sprintf("starting application on port %s", portNumber))
 	_ = http.ListenAndServe(portNumber, nil)

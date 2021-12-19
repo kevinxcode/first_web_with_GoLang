@@ -1,5 +1,7 @@
 package main
 
+//  how to run : go run ./cmd/web/ .
+
 import (
 	"fmt"
 	"net/http"
